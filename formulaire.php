@@ -1,4 +1,7 @@
 <?php
+if(isset($_POST['reset'])) {
+  file_put_contents('todo.json', "");
+}
 $getJson = file_get_contents('todo.json');
 $readJson = json_decode($getJson, true);
 if (empty($readJson)) {
@@ -11,6 +14,9 @@ if (empty($readJson)) {
 }
 if (isset($_POST['tache']) && !empty($_POST['tache'])) {
   $tache = htmlspecialchars($_POST['tache']);
+    if(in_array($tache, $json['Todo'])){
+      return;
+    }
     array_push($json['Todo'], $tache);
     $jsonEncode = json_encode($json, JSON_PRETTY_PRINT);
     file_put_contents('todo.json', $jsonEncode);

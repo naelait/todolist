@@ -1,0 +1,19 @@
+body {
+  width: 25%;
+  margin: 0 auto;
+}
+.archive {
+  color: grey;
+  text-decoration: line-through;
+}
+.todoClass{
+  margin-top: 10%;
+  border: solid 1px black;
+  padding-bottom: 15px;
+}
+.todoClass>* {
+  margin-left: 15px;
+}
+.btn-archive {
+  margin-top: 15px;
+}
